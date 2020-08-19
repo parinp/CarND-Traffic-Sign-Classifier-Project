@@ -188,7 +188,7 @@ It was a fun project where I pushed myself to achieve an accuracy of over 98% fo
 
 It would be interesting to test many different models that are available right now to see if the accuracy of the model on the testing data set would be able to reach 99% which would be better than human accuracy.
 
-However, as mentioned before for traffic signs, if there is any pertubation or damage to the traffic sign, the images could be misclassified.  I added two more images, both stop signs with some perturbation.
+However, as mentioned before for traffic signs, if there is any pertubation or damage to the traffic sign, the images could be misclassified.  I added two more images, both stop signs with some perturbation from this [paper](https://arxiv.org/pdf/1707.08945.pdf)
 
 ![](readme_files/new2.png)
 
