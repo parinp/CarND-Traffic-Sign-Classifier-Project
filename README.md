@@ -62,16 +62,16 @@ Number of classes = 43
 
 <center>
     
-Visualization          |
-:-------------------------:|
+Visualization                 |
+:----------------------------:|
 ![](readme_files/visual.png)  |
 
 </center>
 
 <center>
     
-Sample Image          |
-:-------------------------:|
+Sample Image                  |
+:----------------------------:|
 ![](readme_files/sample.png)  |
 
 </center>
@@ -126,12 +126,10 @@ def augment_data(img_list,labels,low_thresh = 1300):
 ```
 
 <center>
-
-
+    
 Augmented Data Visualization |
-:-------------------------:|
-![](readme_files/aug.png)  |
-
+:---------------------------:|
+![](readme_files/aug.png)    |
 
 </center>
 
