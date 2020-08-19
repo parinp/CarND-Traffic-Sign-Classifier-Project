@@ -162,7 +162,7 @@ Furthermore, Udacity encouraged to us to find traffic signs randomly from the we
 INFO:tensorflow:Restoring parameters from ./lenet
 Test Set Accuracy = 1.000
 ```
-The model was able to correctly identify the classes of all new images!  This is amazing however, this is only for 5 images, it would be more reassuring if it was tested on 100 new images found randomly on the website or my own.  Additionally, these images are quite clear, there will definitely be misclassified images if there were lighting problems or a sign that is damaged or not clear (see [Discussion](#discussion) for more detail.
+The model was able to correctly identify the classes of all new images!  This is amazing however, this is only for 5 images, it would be more reassuring if it was tested on 100 new images found randomly on the website or my own.  Additionally, these images are quite clear, there will definitely be misclassified images if there were lighting problems or a sign that is damaged or not clear (see [Discussion](#discussion) for more detail).
 
 On top of that, the top 5 softmax probabilities for each image is shown below to give an idea of how the model performed.
 
@@ -188,7 +188,7 @@ It was a fun project where I pushed myself to achieve an accuracy of over 98% fo
 
 It would be interesting to test many different models that are available right now to see if the accuracy of the model on the testing data set would be able to reach 99% which would be better than human accuracy.
 
-However, as mentioned before for traffic signs, if there is any pertubation or damage to the traffic sign, the images could be misclassified.  I added two more images, both stop signs with some perturbation from this [paper](https://arxiv.org/pdf/1707.08945.pdf)
+However, as mentioned before for traffic signs, if there is any pertubation or damage to the traffic sign, the images could be misclassified.  I added two more images, both stop signs with some perturbation from this [paper](https://arxiv.org/pdf/1707.08945.pdf).
 
 ![](readme_files/new2.png)
 
