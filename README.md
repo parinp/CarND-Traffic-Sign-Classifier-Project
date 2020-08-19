@@ -18,6 +18,7 @@ Table of Contents
 4. [Deep Learning Architecture](#deep-learning-architecture)
 5. [Model Testing](#model-testing)
 6. [Discussion](#discussion)
+7. [Conclusion](#conclusion)
 
 
 Getting Started
@@ -60,21 +61,9 @@ Image data shape = (32, 32, 3)
 Number of classes = 43
 ```
 
-<center>
-    
-Visualization                 |
-:----------------------------:|
-![](readme_files/visual.png)  |
+![](readme_files/visual.png)  
 
-</center>
-
-<center>
-    
-Sample Image                  |
-:----------------------------:|
-![](readme_files/sample.png)  |
-
-</center>
+![](readme_files/sample.png)
 
 Data Preprocessing
 ---
@@ -125,14 +114,7 @@ def augment_data(img_list,labels,low_thresh = 1300):
     return np.array(new_imgs).reshape(-1,32,32,1), np.array(new_labels)
 ```
 
-<center>
-    
-Augmented Data Visualization |
-:---------------------------:|
-![](readme_files/aug.png)    |
-
-</center>
-
+![](readme_files/aug.png)  
 
 Deep Learning Architecture
 ---
@@ -172,7 +154,7 @@ INFO:tensorflow:Restoring parameters from ./lenet
 Test Accuracy = 0.975
 ```
 
-Furthermore, Udacity encouraged to us to find traffic signs randomly from the website.  I took a screenshot of some pictures from a random road video as well as from google images totalling 5 new images.  These images are shown below and are fed into the model in order to see if they will be classified correctly.
+Furthermore, Udacity encouraged to us to find traffic signs randomly from the website.  I took a screenshot of some pictures from a random road video as well as from google images totalling 5 new images.  The image were selected because it was identical to the test set.  These images are shown below and are fed into the model in order to see if they will be classified correctly.
 
 ![](readme_files/new.png)  
 
@@ -180,7 +162,7 @@ Furthermore, Udacity encouraged to us to find traffic signs randomly from the we
 INFO:tensorflow:Restoring parameters from ./lenet
 Test Set Accuracy = 1.000
 ```
-The model was able to correctly identify the classes of all new images!  This is amazing however, this is only for 5 images, it would be more reassuring if it was tested on 100 new images found randomly on the website or my own.
+The model was able to correctly identify the classes of all new images!  This is amazing however, this is only for 5 images, it would be more reassuring if it was tested on 100 new images found randomly on the website or my own.  Additionally, these images are quite clear, there will definitely be misclassified images if there were lighting problems or a sign that is damaged or not clear (see [Discussion](#discussion) for more detail.
 
 On top of that, the top 5 softmax probabilities for each image is shown below to give an idea of how the model performed.
 
@@ -206,5 +188,37 @@ It was a fun project where I pushed myself to achieve an accuracy of over 98% fo
 
 It would be interesting to test many different models that are available right now to see if the accuracy of the model on the testing data set would be able to reach 99% which would be better than human accuracy.
 
-The toughest part for me would be the preprocessing part.  It is really challenging to provide the best inputs for the model to train on.  There are many things to consider and tradeoffs are usually there but finding the best combinations become very rerwarding once achieved.
+However, as mentioned before for traffic signs, if there is any pertubation or damage to the traffic sign, the images could be misclassified.  I added two more images, both stop signs with some perturbation.
+
+![](readme_files/new2.png)
+
+```
+INFO:tensorflow:Restoring parameters from ./lenet
+Test Set Accuracy = 0.714
+```
+
+And the top 5 probabilitiess shows that the new added signs were classified wrong (this piece of code can be found in `Images.ipynb`).
+
+```
+INFO:tensorflow:Restoring parameters from ./lenet
+TopKV2(values=array([[  9.99981523e-01,   1.83954107e-05,   3.60981822e-08],
+       [  9.96065199e-01,   3.91497463e-03,   1.00641610e-05],
+       [  9.96908605e-01,   1.84577308e-03,   5.92454569e-04],
+       [  9.96045172e-01,   2.69794138e-03,   8.87671718e-04],
+       [  9.99998450e-01,   1.14552768e-06,   3.56419974e-07],
+       [  9.78011131e-01,   2.02589706e-02,   1.49508868e-03],
+       [  9.84147668e-01,   1.31006921e-02,   2.64910562e-03]], dtype=float32), indices=array([[40, 12,  5],
+       [ 2,  1, 14],
+       [13, 24, 29],
+       [15, 12,  1],
+       [23,  2, 19],
+       [12, 13,  9],
+       [ 1,  4, 12]], dtype=int32))
+```
+
+Conclusion
+---
+
+In conclusion, the toughest part for me would be the preprocessing part.  It is really challenging to provide the best inputs for the model to train on.  There are many things to consider and tradeoffs are always there but finding the best combinations become very rerwarding once achieved.  My model was able to achieve decent if not great results but with the only drawback of misclassifying perturbed signs.
+
 
