@@ -17,7 +17,7 @@ Table of Contents
 3. [Data Preprocessing](#data-preprocessing)
 4. [Deep Learning Architecture](#deep-learning-architecture)
 5. [Model Testing](#model-testing)
-6. [Reflection](#reflection)
+6. [Discussion](#discussion)
 
 
 Getting Started
@@ -66,6 +66,10 @@ Visualization          |
 :-------------------------:|
 ![](readme_files/visual.png)  |
 
+</center>
+
+<center>
+    
 Sample Image          |
 :-------------------------:|
 ![](readme_files/sample.png)  |
@@ -121,14 +125,16 @@ def augment_data(img_list,labels,low_thresh = 1300):
     return np.array(new_imgs).reshape(-1,32,32,1), np.array(new_labels)
 ```
 
-
 <center>
-    
+
+
 Augmented Data Visualization |
 :-------------------------:|
 ![](readme_files/aug.png)  |
 
+
 </center>
+
 
 Deep Learning Architecture
 ---
@@ -195,7 +201,7 @@ TopKV2(values=array([[  9.99981523e-01,   1.83955144e-05,   3.60982497e-08],
 
 We can see that the probabilities exceed 0.96 for each image classification which shows that the model is able to make great predictions, but there is still a lot of room for improvement.
 
-Reflection
+Discussion
 ---
 
 It was a fun project where I pushed myself to achieve an accuracy of over 98% for the training set and achieve a very high accuracy on the test data set.  I tried many different models found on the paper as well as all their preprocessing techniques until I was able to achieve similar results.
